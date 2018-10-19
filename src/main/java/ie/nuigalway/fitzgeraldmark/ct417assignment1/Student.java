@@ -17,6 +17,7 @@ public class Student {
     private DateTime DOB;
     private String id;
     private ArrayList<Module> modules;
+    private ArrayList<Course> courses;
     
     public Student(String name, int age, DateTime dateOfBirth, String id){
         this.name = name;
@@ -64,5 +65,9 @@ public class Student {
     
     public void addModule(Module module) {
         this.modules.add(module);
+    }
+
+    public void addCourse(Course course) {
+        this.courses.add(course);
     }
 }
