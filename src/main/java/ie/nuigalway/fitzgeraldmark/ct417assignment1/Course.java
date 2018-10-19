@@ -59,4 +59,11 @@ public class Course {
             }
         }
     }
+    
+    public void addStudent(Student student) {
+        this.students.add(student);
+        for(Module m : modules) {
+            m.addStudent(student);
+        }
+    }
 }
