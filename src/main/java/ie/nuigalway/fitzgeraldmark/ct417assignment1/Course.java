@@ -53,11 +53,9 @@ public class Course {
     public void addModule(Module module){
         this.modules.add(module);
         module.addCourse(this);
-        if(students.size() > 0){
-            for(Student s : students) {
-                module.addStudent(s);
-                s.addModule(module);
-            }
+        for(Student s : students) {
+            module.addStudent(s);
+            s.addModule(module);
         }
     }
     
@@ -66,6 +64,7 @@ public class Course {
         student.addCourse(this);
         for(Module m : modules) {
             m.addStudent(student);
+            student.addModule(m);
         }
     }
     
