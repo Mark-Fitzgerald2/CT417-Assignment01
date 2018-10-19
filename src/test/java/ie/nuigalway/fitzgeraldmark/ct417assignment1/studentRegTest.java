@@ -5,6 +5,7 @@
  */
 package ie.nuigalway.fitzgeraldmark.ct417assignment1;
 
+import java.util.ArrayList;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.junit.After;
@@ -75,5 +76,31 @@ public class studentRegTest {
         Module soc = new Module("System on Chip Design I", "EE451");
         assertEquals(soc.getName(), "System on Chip Design I");
         assertEquals(soc.getId(), "EE451");
+        
+        ece.addModule(softEng);
+        ece.addModule(ml);
+        ece.addModule(fyp);
+        ece.addModule(tele);
+        ece.addModule(dsp);
+        ece.addModule(soc);
+        
+        ArrayList<Course> courses = new ArrayList<Course>();
+        courses.add(ece);
+        
+        ArrayList<Module> modules = new ArrayList<Module>();
+        modules.add(softEng);
+        modules.add(ml);
+        modules.add(fyp);
+        modules.add(tele);
+        modules.add(dsp);
+        modules.add(soc);
+        
+        assertEquals(ece.getModules(), modules);
+        assertEquals(softEng.getCourses(), courses);
+        assertEquals(ml.getCourses(), courses);
+        assertEquals(fyp.getCourses(), courses);
+        assertEquals(tele.getCourses(), courses);
+        assertEquals(dsp.getCourses(), courses);
+        assertEquals(soc.getCourses(), courses);
      }
 }
