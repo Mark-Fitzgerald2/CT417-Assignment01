@@ -24,7 +24,6 @@ public class Student {
         this.DOB = dateOfBirth;
         this.id = id;
         modules = new ArrayList<Module>();
-        
     }
     
     public String getName() {
@@ -61,5 +60,9 @@ public class Student {
     
     public String getUsername(){
         return this.name + this.age;
+    }
+    
+    public void addModule(Module module) {
+        this.modules.add(module);
     }
 }

@@ -5,6 +5,8 @@
  */
 package ie.nuigalway.fitzgeraldmark.ct417assignment1;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Mark Fitzgerald, NUI Galway
@@ -12,10 +14,12 @@ package ie.nuigalway.fitzgeraldmark.ct417assignment1;
 public class Module {
     private String name;
     private String id;
+    private ArrayList<Student> students;
     
     public Module(String name, String id){
         this.name = name;
         this.id = id;
+        students = new ArrayList<Student>();
     }
     
     public String getName() {
@@ -32,6 +36,10 @@ public class Module {
 
     public void setId(String id) {
         this.id = id;
+    }
+    
+    public void addStudent(Student student){
+        this.students.add(student);
     }
 }
 

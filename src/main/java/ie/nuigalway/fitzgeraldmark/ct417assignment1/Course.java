@@ -8,17 +8,22 @@ package ie.nuigalway.fitzgeraldmark.ct417assignment1;
  *
  * @author Mark Fitzgerald, NUI Galway
  */
+import java.util.ArrayList;
 import org.joda.time.DateTime;
 
 public class Course {
     private DateTime startDate;
     private String name;
     private DateTime endDate;
+    private ArrayList<Module> modules;
+    private ArrayList<Student> students;
     
     public Course(String name, DateTime startDate, DateTime endDate){
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
+        modules = new ArrayList<Module>();
+        students = new ArrayList<Student>();
     }
     
     public String getName() {
@@ -43,5 +48,15 @@ public class Course {
 
     public void setEndDate(DateTime endDate) {
         this.endDate = endDate;
+    }
+    
+    public void addModule(Module module){
+        this.modules.add(module);
+        if(students.size() > 0){
+            for(Student s : students) {
+                module.addStudent(s);
+                s.addModule(module);
+            }
+        }
     }
 }
