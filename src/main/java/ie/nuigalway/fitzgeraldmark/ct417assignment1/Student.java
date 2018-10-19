@@ -20,14 +20,17 @@ public class Student {
     private ArrayList<Course> courses;
     
     public Student(String name, int age, DateTime dateOfBirth, String id){
-        this.name = name;
-        this.age = age;
-        this.DOB = dateOfBirth;
-        this.id = id;
+        //call setter methods for passed in values
+        this.setName(name);
+        this.setAge(age);
+        this.setDOB(dateOfBirth);
+        this.setId(id);
+        //initialize the arraylists
         modules = new ArrayList<Module>();
         courses = new ArrayList<Course>();
     }
     
+    //getter and setter for name
     public String getName() {
         return name;
     }
@@ -36,6 +39,7 @@ public class Student {
         this.name = name;
     }
     
+    //getter and setter for age
     public int getAge() {
         return age;
     }
@@ -44,6 +48,7 @@ public class Student {
         this.age = age;
     }
 
+    //getter and setter for DOB
     public DateTime getDOB() {
         return DOB;
     }
@@ -52,6 +57,7 @@ public class Student {
         this.DOB = dateOfBirth;
     }
 
+    //getter and setter for Id
     public String getId() {
         return id;
     }
@@ -60,22 +66,27 @@ public class Student {
         this.id = id;
     }
     
+    //getter for username. Return name and age
     public String getUsername(){
         return this.name + " " + this.age;
     }
     
+    //adds a module to the arraylist
     public void addModule(Module module) {
         this.modules.add(module);
     }
 
+    //adds a course to the arraylist
     public void addCourse(Course course) {
         this.courses.add(course);
     }
     
+    //returns the course arraylist
     public ArrayList getCourses() {
         return this.courses;
     }
     
+    //returns the module arraylist
     public ArrayList getModules() {
         return this.modules;
     }

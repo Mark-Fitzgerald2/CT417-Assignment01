@@ -19,13 +19,16 @@ public class Course {
     private ArrayList<Student> students;
     
     public Course(String name, DateTime startDate, DateTime endDate){
-        this.name = name;
-        this.startDate = startDate;
-        this.endDate = endDate;
+        //call setters for passed in variables
+        this.setName(name);
+        this.setStartDate(startDate);
+        this.setEndDate(endDate);
+        //initialize arraylists
         modules = new ArrayList<Module>();
         students = new ArrayList<Student>();
     }
     
+    //getter and setter for name
     public String getName() {
         return name;
     }
@@ -34,6 +37,7 @@ public class Course {
         this.name = name;
     }
 
+    //getter and setter for start date
     public DateTime getStartDate() {
         return startDate;
     }
@@ -42,6 +46,7 @@ public class Course {
         this.startDate = startDate;
     }
     
+    //getter and setter for end date
     public DateTime getEndDate() {
         return endDate;
     }
@@ -50,28 +55,38 @@ public class Course {
         this.endDate = endDate;
     }
     
+    //adds a module to array list
     public void addModule(Module module){
-        this.modules.add(module);
-        module.addCourse(this);
-        for(Student s : students) {
+        this.modules.add(module); //add module
+        module.addCourse(this); //adds this course to module object
+        for(Student s : students) { 
+            //if there are already students enrolled to this course
+            //register the students in module
             module.addStudent(s);
+            //given the student the new module
             s.addModule(module);
         }
     }
     
+    //adds a student to array list
     public void addStudent(Student student) {
-        this.students.add(student);
-        student.addCourse(this);
+        this.students.add(student); //add student
+        student.addCourse(this); //adds this course to student object
         for(Module m : modules) {
+            //if there are already modules for this course
+            //give the students these modules
             m.addStudent(student);
+            //give the module the new student
             student.addModule(m);
         }
     }
     
+    //returns the arraylist of students
     public ArrayList getStudents() {
         return this.students;
     }
     
+    //returns the arraylist of modules
     public ArrayList getModules() {
         return this.modules;
     }

@@ -18,12 +18,15 @@ public class Module {
     private ArrayList<Course> courses;
     
     public Module(String name, String id){
-        this.name = name;
-        this.id = id;
+        //call setters for variables
+        this.setName(name);
+        this.setId(id);
+        //initialize arraylists
         students = new ArrayList<Student>();
         courses = new ArrayList<Course>();
     }
     
+    //getter and setter for name
     public String getName() {
         return name;
     }
@@ -32,6 +35,7 @@ public class Module {
         this.name = name;
     }
 
+    //getter and setter for id
     public String getId() {
         return id;
     }
@@ -40,18 +44,22 @@ public class Module {
         this.id = id;
     }
     
+    //add a student to the array list
     public void addStudent(Student student){
         this.students.add(student);
     }
     
+    //add a course to the array list
     public void addCourse(Course course) {
         this.courses.add(course);
     }
     
+    //return the arraylist of students registered
     public ArrayList getStudents() {
         return this.students;
     }
     
+    //return the arraylist of courses with this module
     public ArrayList getCourses() {
         return this.courses;
     }
