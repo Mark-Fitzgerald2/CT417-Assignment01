@@ -70,4 +70,12 @@ public class Student {
     public void addCourse(Course course) {
         this.courses.add(course);
     }
+    
+    public ArrayList getCourses() {
+        return this.courses;
+    }
+    
+    public ArrayList getModules() {
+        return this.modules;
+    }
 }
