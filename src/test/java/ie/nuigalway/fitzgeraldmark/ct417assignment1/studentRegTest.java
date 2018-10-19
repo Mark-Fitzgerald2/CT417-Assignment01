@@ -118,13 +118,34 @@ public class studentRegTest {
         assertEquals(student1.getId(), "154789");
         assertEquals(student1.getUsername(), "Paddy Smith 21");
         
+        ece.addStudent(student6);
+        ece.addStudent(student7);
+        ece.addStudent(student8);
+        ece.addStudent(student9);
+        ece.addStudent(student10);
+        
         Course csit = new Course("Computer Science and Information Technology (CS&IT)", DateTime.parse("10/09/2018", DateTimeFormat.forPattern("dd/MM/yyyy")), DateTime.parse("10/05/2019", DateTimeFormat.forPattern("dd/MM/yyyy")));
         csit.addStudent(student1);
+        csit.addStudent(student2);
+        csit.addStudent(student3);
+        csit.addStudent(student4);
+        csit.addStudent(student5);
         csit.addModule(softEng);
         csit.addModule(ml);
         
         ArrayList<Student> csitStudents = new ArrayList<Student>();
         csitStudents.add(student1);
+        csitStudents.add(student2);
+        csitStudents.add(student3);
+        csitStudents.add(student4);
+        csitStudents.add(student5);
+        
+        ArrayList<Student> eceStudents = new ArrayList<Student>();
+        eceStudents.add(student6);
+        eceStudents.add(student7);
+        eceStudents.add(student8);
+        eceStudents.add(student9);
+        eceStudents.add(student10);
         
         ArrayList<Course> st1Course = new ArrayList<Course>();
         st1Course.add(csit);
@@ -140,5 +161,15 @@ public class studentRegTest {
         courses.add(csit);
         assertEquals(softEng.getCourses(), courses);
         assertEquals(ml.getCourses(), courses);
+        
+        ArrayList<Student> allStudents = new ArrayList<Student>();
+        allStudents.addAll(eceStudents);
+        allStudents.addAll(csitStudents);
+        assertEquals(ml.getStudents(), allStudents);
+        assertEquals(softEng.getStudents(), allStudents);
+        assertEquals(fyp.getStudents(), eceStudents);
+        assertEquals(dsp.getStudents(), eceStudents);
+        assertEquals(soc.getStudents(), eceStudents);
+        assertEquals(tele.getStudents(), eceStudents);
      }
 }
