@@ -5,6 +5,8 @@
  */
 package ie.nuigalway.fitzgeraldmark.ct417assignment1;
 
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -45,6 +47,9 @@ public class studentRegTest {
     
     @Test
      public void StudentReg_Test() {
-        
+        Course course = new Course("Electronic and Computer Engineering (ECE)", DateTime.parse("10/09/2018", DateTimeFormat.forPattern("dd/MM/yyyy")), DateTime.parse("10/05/2019", DateTimeFormat.forPattern("dd/MM/yyyy")));
+        assertEquals(course.getName(), "Electronic and Computer Engineering (ECE)");
+        assertEquals(course.getStartDate(),DateTime.parse("10/09/2018", DateTimeFormat.forPattern("dd/MM/yyyy")));
+        assertEquals(course.getEndDate(),DateTime.parse("10/05/2019", DateTimeFormat.forPattern("dd/MM/yyyy")));
      }
 }
