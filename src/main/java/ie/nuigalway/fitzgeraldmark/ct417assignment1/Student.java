@@ -16,12 +16,15 @@ public class Student {
     private int age;
     private DateTime DOB;
     private String id;
+    private ArrayList<Module> modules;
     
     public Student(String name, int age, DateTime dateOfBirth, String id){
         this.name = name;
         this.age = age;
         this.DOB = dateOfBirth;
         this.id = id;
+        modules = new ArrayList<Module>();
+        
     }
     
     public String getName() {
