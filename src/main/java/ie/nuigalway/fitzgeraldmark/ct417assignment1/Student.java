@@ -43,11 +43,11 @@ public class Student {
         this.age = age;
     }
 
-    public DateTime getDateOfBirth() {
+    public DateTime getDOB() {
         return DOB;
     }
 
-    public void setDateOfBirth(DateTime dateOfBirth) {
+    public void setDOB(DateTime dateOfBirth) {
         this.DOB = dateOfBirth;
     }
 
@@ -60,7 +60,7 @@ public class Student {
     }
     
     public String getUsername(){
-        return this.name + this.age;
+        return this.name + " " + this.age;
     }
     
     public void addModule(Module module) {

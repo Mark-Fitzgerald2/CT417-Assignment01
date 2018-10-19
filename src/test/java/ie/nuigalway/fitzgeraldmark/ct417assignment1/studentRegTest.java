@@ -102,5 +102,25 @@ public class studentRegTest {
         assertEquals(tele.getCourses(), courses);
         assertEquals(dsp.getCourses(), courses);
         assertEquals(soc.getCourses(), courses);
+        
+        Student student1 = new Student("Paddy Smith", 21, DateTime.parse("25/05/1997", DateTimeFormat.forPattern("dd/MM/yyyy")), "154789");
+        Student student2 = new Student("Joe Lo Trgulio", 20, DateTime.parse("17/12/1997", DateTimeFormat.forPattern("dd/MM/yyyy")), "132654");
+        Student student3 = new Student("Andy Samberg", 25, DateTime.parse("12/01/1993", DateTimeFormat.forPattern("dd/MM/yyyy")), "198745");
+        Student student4 = new Student("Terry Crewes", 22, DateTime.parse("30/11/1995", DateTimeFormat.forPattern("dd/MM/yyyy")), "741423");
+        Student student5 = new Student("Amy Santiago", 21, DateTime.parse("02/02/1997", DateTimeFormat.forPattern("dd/MM/yyyy")), "715845");
+        Student student6 = new Student("Rosa Diaz", 29, DateTime.parse("09/06/1989", DateTimeFormat.forPattern("dd/MM/yyyy")), "012753");
+        Student student7 = new Student("Chelsea Peretti", 24, DateTime.parse("20/04/1994", DateTimeFormat.forPattern("dd/MM/yyyy")), "354126");
+        Student student8 = new Student("Melissa Fumero", 22, DateTime.parse("27/03/1996", DateTimeFormat.forPattern("dd/MM/yyyy")), "485269");
+        Student student9 = new Student("Stephanie Beatriz", 20, DateTime.parse("01/01/1998", DateTimeFormat.forPattern("dd/MM/yyyy")), "785435");
+        Student student10 = new Student("Raymond Holt", 23, DateTime.parse("18/07/1995", DateTimeFormat.forPattern("dd/MM/yyyy")), "455164");
+        
+        assertEquals(student1.getName(), "Paddy Smith");
+        assertEquals(student1.getAge(), 21);
+        assertEquals(student1.getDOB(), DateTime.parse("25/05/1997", DateTimeFormat.forPattern("dd/MM/yyyy")));
+        assertEquals(student1.getId(), "154789");
+        assertEquals(student1.getUsername(), "Paddy Smith 21");
+        
+        
+       
      }
 }
