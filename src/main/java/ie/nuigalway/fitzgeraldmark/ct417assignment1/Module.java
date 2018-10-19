@@ -15,11 +15,13 @@ public class Module {
     private String name;
     private String id;
     private ArrayList<Student> students;
+    private ArrayList<Course> courses;
     
     public Module(String name, String id){
         this.name = name;
         this.id = id;
         students = new ArrayList<Student>();
+        courses = new ArrayList<Course>();
     }
     
     public String getName() {
@@ -42,8 +44,13 @@ public class Module {
         this.students.add(student);
     }
     
+    public void addCourse(Course course) {
+        this.courses.add(course);
+    }
+    
     public ArrayList getStudents() {
         return this.students;
     }
+    
 }
 
