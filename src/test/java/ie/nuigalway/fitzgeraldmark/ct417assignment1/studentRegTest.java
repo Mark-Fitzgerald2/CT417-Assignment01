@@ -87,17 +87,15 @@ public class studentRegTest {
         ArrayList<Course> courses = new ArrayList<Course>();
         courses.add(ece);
         
-        ArrayList<Module> modules = new ArrayList<Module>();
-        modules.add(softEng);
-        modules.add(ml);
-        modules.add(fyp);
-        modules.add(tele);
-        modules.add(dsp);
-        modules.add(soc);
+        ArrayList<Module> eceModules = new ArrayList<Module>();
+        eceModules.add(softEng);
+        eceModules.add(ml);
+        eceModules.add(fyp);
+        eceModules.add(tele);
+        eceModules.add(dsp);
+        eceModules.add(soc);
         
-        assertEquals(ece.getModules(), modules);
-        assertEquals(softEng.getCourses(), courses);
-        assertEquals(ml.getCourses(), courses);
+        assertEquals(ece.getModules(), eceModules);
         assertEquals(fyp.getCourses(), courses);
         assertEquals(tele.getCourses(), courses);
         assertEquals(dsp.getCourses(), courses);
@@ -122,13 +120,25 @@ public class studentRegTest {
         
         Course csit = new Course("Computer Science and Information Technology (CS&IT)", DateTime.parse("10/09/2018", DateTimeFormat.forPattern("dd/MM/yyyy")), DateTime.parse("10/05/2019", DateTimeFormat.forPattern("dd/MM/yyyy")));
         csit.addStudent(student1);
+        csit.addModule(softEng);
+        csit.addModule(ml);
         
         ArrayList<Student> csitStudents = new ArrayList<Student>();
         csitStudents.add(student1);
         
         ArrayList<Course> st1Course = new ArrayList<Course>();
         st1Course.add(csit);
+        
+        ArrayList<Module> st1Module = new ArrayList<Module>();
+        st1Module.add(softEng);
+        st1Module.add(ml);
+        
         assertEquals(csit.getStudents(), csitStudents);
         assertEquals(student1.getCourses(), st1Course);
+        assertEquals(student1.getModules(), st1Module);
+        
+        courses.add(csit);
+        assertEquals(softEng.getCourses(), courses);
+        assertEquals(ml.getCourses(), courses);
      }
 }
