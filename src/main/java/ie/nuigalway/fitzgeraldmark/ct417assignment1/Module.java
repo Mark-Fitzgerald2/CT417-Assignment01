@@ -41,5 +41,9 @@ public class Module {
     public void addStudent(Student student){
         this.students.add(student);
     }
+    
+    public ArrayList getStudents() {
+        return this.students;
+    }
 }
 
