@@ -52,5 +52,9 @@ public class Module {
         return this.students;
     }
     
+    public ArrayList getCourses() {
+        return this.courses;
+    }
+    
 }
 
