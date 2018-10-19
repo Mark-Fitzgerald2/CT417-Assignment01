@@ -68,4 +68,12 @@ public class Course {
             m.addStudent(student);
         }
     }
+    
+    public ArrayList getStudents() {
+        return this.students;
+    }
+    
+    public ArrayList getModules() {
+        return this.modules;
+    }
 }
