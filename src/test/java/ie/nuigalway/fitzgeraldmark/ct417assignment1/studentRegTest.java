@@ -120,7 +120,15 @@ public class studentRegTest {
         assertEquals(student1.getId(), "154789");
         assertEquals(student1.getUsername(), "Paddy Smith 21");
         
+        Course csit = new Course("Computer Science and Information Technology (CS&IT)", DateTime.parse("10/09/2018", DateTimeFormat.forPattern("dd/MM/yyyy")), DateTime.parse("10/05/2019", DateTimeFormat.forPattern("dd/MM/yyyy")));
+        csit.addStudent(student1);
         
-       
+        ArrayList<Student> csitStudents = new ArrayList<Student>();
+        csitStudents.add(student1);
+        
+        ArrayList<Course> st1Course = new ArrayList<Course>();
+        st1Course.add(csit);
+        assertEquals(csit.getStudents(), csitStudents);
+        assertEquals(student1.getCourses(), st1Course);
      }
 }
