@@ -55,5 +55,25 @@ public class studentRegTest {
         Module softEng = new Module("Software Engineering III", "CT417");
         assertEquals(softEng.getName(), "Software Engineering III");
         assertEquals(softEng.getId(), "CT417");
+        
+        Module ml = new Module("Machine Learning and Data Mining", "CT475");
+        assertEquals(ml.getName(), "Machine Learning and Data Mining");
+        assertEquals(ml.getId(), "CT475");
+        
+        Module fyp = new Module("Electronic and Computer Engineering Project", "CT434");
+        assertEquals(fyp.getName(), "Electronic and Computer Engineering Project");
+        assertEquals(fyp.getId(), "CT434");
+        
+        Module tele = new Module("Telecommunications Software Applications", "EE453");
+        assertEquals(tele.getName(), "Telecommunications Software Applications");
+        assertEquals(tele.getId(), "EE453");
+        
+        Module dsp = new Module("Digital Signal Processing", "EE445");
+        assertEquals(dsp.getName(), "Digital Signal Processing");
+        assertEquals(dsp.getId(), "EE445");
+        
+        Module soc = new Module("System on Chip Design I", "EE451");
+        assertEquals(soc.getName(), "System on Chip Design I");
+        assertEquals(soc.getId(), "EE451");
      }
 }
