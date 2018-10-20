@@ -24,8 +24,8 @@ public class Course {
         this.setStartDate(startDate);
         this.setEndDate(endDate);
         //initialize arraylists
-        modules = new ArrayList<Module>();
-        students = new ArrayList<Student>();
+        modules = new ArrayList<>();
+        students = new ArrayList<>();
     }
     
     //getter and setter for name

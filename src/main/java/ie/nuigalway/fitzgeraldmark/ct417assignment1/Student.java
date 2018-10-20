@@ -26,8 +26,8 @@ public class Student {
         this.setDOB(dateOfBirth);
         this.setId(id);
         //initialize the arraylists
-        modules = new ArrayList<Module>();
-        courses = new ArrayList<Course>();
+        modules = new ArrayList<>();
+        courses = new ArrayList<>();
     }
     
     //getter and setter for name

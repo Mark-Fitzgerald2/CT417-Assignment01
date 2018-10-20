@@ -22,8 +22,8 @@ public class Module {
         this.setName(name);
         this.setId(id);
         //initialize arraylists
-        students = new ArrayList<Student>();
-        courses = new ArrayList<Course>();
+        students = new ArrayList<>();
+        courses = new ArrayList<>();
     }
     
     //getter and setter for name
@@ -63,6 +63,5 @@ public class Module {
     public ArrayList getCourses() {
         return this.courses;
     }
-    
 }
 

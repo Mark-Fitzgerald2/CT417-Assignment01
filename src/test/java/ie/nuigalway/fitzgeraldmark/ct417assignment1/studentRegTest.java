@@ -8,10 +8,6 @@ package ie.nuigalway.fitzgeraldmark.ct417assignment1;
 import java.util.ArrayList;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -64,11 +60,11 @@ public class studentRegTest {
         ece.addModule(soc);
         
         //create an arraylist of courses
-        ArrayList<Course> courses = new ArrayList<Course>();
+        ArrayList<Course> courses = new ArrayList<>();
         courses.add(ece);
         
         //create an arraylist of the modules
-        ArrayList<Module> eceModules = new ArrayList<Module>();
+        ArrayList<Module> eceModules = new ArrayList<>();
         eceModules.add(softEng);
         eceModules.add(ml);
         eceModules.add(fyp);
@@ -123,7 +119,7 @@ public class studentRegTest {
         csit.addModule(ml);
         
         //create an array list of csit students
-        ArrayList<Student> csitStudents = new ArrayList<Student>();
+        ArrayList<Student> csitStudents = new ArrayList<>();
         csitStudents.add(student1);
         csitStudents.add(student2);
         csitStudents.add(student3);
@@ -131,7 +127,7 @@ public class studentRegTest {
         csitStudents.add(student5);
         
         //create an arraylist of ece students
-        ArrayList<Student> eceStudents = new ArrayList<Student>();
+        ArrayList<Student> eceStudents = new ArrayList<>();
         eceStudents.add(student6);
         eceStudents.add(student7);
         eceStudents.add(student8);
@@ -139,11 +135,11 @@ public class studentRegTest {
         eceStudents.add(student10);
         
         //create an array list of courses assigned to student 1
-        ArrayList<Course> st1Course = new ArrayList<Course>();
+        ArrayList<Course> st1Course = new ArrayList<>();
         st1Course.add(csit);
         
         //create an array list of modules assigned to student 1
-        ArrayList<Module> st1Module = new ArrayList<Module>();
+        ArrayList<Module> st1Module = new ArrayList<>();
         st1Module.add(softEng);
         st1Module.add(ml);
         
@@ -160,7 +156,7 @@ public class studentRegTest {
         assertEquals(ml.getCourses(), courses);
         
         //create an arraylist of all the students
-        ArrayList<Student> allStudents = new ArrayList<Student>();
+        ArrayList<Student> allStudents = new ArrayList<>();
         allStudents.addAll(eceStudents);
         allStudents.addAll(csitStudents);
         //check if modules have the correct students signed up to them
